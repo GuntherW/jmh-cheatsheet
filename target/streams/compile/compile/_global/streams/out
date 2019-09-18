@@ -1,0 +1,4 @@
+[0m[[0m[31merror[0m] [0m[0m/home/gunther/projekte/scala/jmh-cheatsheet/src/main/scala/de/codecentric/wittig/jmh/ExampleBenchmark.scala:34:19: value matches is not a member of scala.util.matching.Regex[0m
+[0m[[0m[31merror[0m] [0m[0m    if (reg.regex.matches("hallo gunther")) 1 else 2[0m
+[0m[[0m[31merror[0m] [0m[0m                  ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m

@@ -1,0 +1,15 @@
+[0m[[0m[0mdebug[0m] [0m[0mPackaging /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/jmh-cheatsheet_2.12-0.1.0-SNAPSHOT.jar ...[0m
+[0m[[0m[0mdebug[0m] [0m[0mInput file mappings:[0m
+[0m[[0m[0mdebug[0m] [0m[0m	[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes[0m
+[0m[[0m[0mdebug[0m] [0m[0m	de[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes/de[0m
+[0m[[0m[0mdebug[0m] [0m[0m	de/codecentric[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes/de/codecentric[0m
+[0m[[0m[0mdebug[0m] [0m[0m	de/codecentric/wittig[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes/de/codecentric/wittig[0m
+[0m[[0m[0mdebug[0m] [0m[0m	de/codecentric/wittig/jmh[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes/de/codecentric/wittig/jmh[0m
+[0m[[0m[0mdebug[0m] [0m[0m	de/codecentric/wittig/jmh/ExampleBenchmark.class[0m
+[0m[[0m[0mdebug[0m] [0m[0m	  /home/gunther/projekte/scala/jmh-cheatsheet/target/scala-2.12/classes/de/codecentric/wittig/jmh/ExampleBenchmark.class[0m
+[0m[[0m[0mdebug[0m] [0m[0mDone packaging.[0m
