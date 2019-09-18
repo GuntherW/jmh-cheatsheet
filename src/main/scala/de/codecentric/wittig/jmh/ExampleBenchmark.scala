@@ -29,6 +29,6 @@ class ExampleBenchmark {
   @Benchmark
   def avoidDeadCodeElemination(blackhole: Blackhole): Unit = {
     val c = 1 + 2
-    blackhole.consume(c)
+    blackhole.consume(c) // if not consumed by blackhole, code would be eleminated by compiler, because its not used anywhere
   }
 }
