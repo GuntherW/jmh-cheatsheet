@@ -1,6 +1,0 @@
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 69 de.codecentric.wittig.jmh.generated.ExampleBenchmark_iterator_jmhTest S 8 iterator S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 66 de.codecentric.wittig.jmh.generated.ExampleBenchmark_range_jmhTest S 5 range S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 65 de.codecentric.wittig.jmh.generated.ExampleBenchmark_view_jmhTest S 4 view S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 66 de.codecentric.wittig.jmh.generated.ExampleBenchmark_range_jmhTest S 5 range S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 69 de.codecentric.wittig.jmh.generated.ExampleBenchmark_iterator_jmhTest S 8 iterator S 11 AverageTime E A 1 1 1 E E E E E E E E E E E E E E E E E 
-JMH S 42 de.codecentric.wittig.jmh.ExampleBenchmark S 85 de.codecentric.wittig.jmh.generated.ExampleBenchmark_avoidDeadCodeElemination_jmhTest S 24 avoidDeadCodeElemination S 10 Throughput E A 1 1 1 E E E E E E E E E E E E E E E E E 
