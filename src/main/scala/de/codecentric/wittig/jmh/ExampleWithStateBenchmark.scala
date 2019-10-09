@@ -54,26 +54,24 @@ class LinkedListState {
 class ExampleWithStateBenchmark {
 
   @Benchmark
-  def ArrayList_InsertToTheMiddle(state: ArrayListState): Unit = {
-    val size = state.arrayList.size()
+  def insertToTheMiddle_ArrayList(state: ArrayListState): Unit = {
+    val size   = state.arrayList.size()
     val offset = size / 2
     state.arrayList.add(offset, 42)
   }
 
   @Benchmark
-  def LinkedList_InsertToTheMiddle(state: LinkedListState): Unit = {
-    val size = state.linkedList.size()
+  def unsertToTheMiddle_LinkedList(state: LinkedListState): Unit = {
+    val size   = state.linkedList.size()
     val offset = size / 2
     state.linkedList.add(offset, 42)
   }
 
   @Benchmark
-  def ArrayList_Prepend(state: ArrayListState): Unit = {
+  def prepend_ArrayList(state: ArrayListState): Unit =
     state.arrayList.add(0, 42)
-  }
 
   @Benchmark
-  def LinkedList_Prepend(state: LinkedListState): Unit = {
+  def prepend_LinkedList(state: LinkedListState): Unit =
     state.linkedList.add(0, 42)
-  }
 }

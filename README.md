@@ -18,6 +18,10 @@ sbt:jmh-cheatsheet> `jmh:run  .*ExampleWithSimpleStateBenchmark.*` // alle Param
 ##### Aufgepasst:
 ###### Dead Code Elemination
 Damit die JVM nicht an der falschen Stelle optimiert, sollte die gebenchmarkte Methode einen Wert zurückgeben, oder via Blackhole den Wert konsumieren. Siehe [ExampleBenchmark.scala](src/main/scala/de/codecentric/wittig/jmh/ExampleBenchmark.scala)
+###### Methodenbenamung
+In den Ergebnissen werden von jmh alle Testmethode alphabetisch sortiert untereinander angezeigt.
+Zur besseren Übersicht empfielt es sich also, daß man zwei Methoden, die man miteinander vergleichen möchte, lediglich im Suffix unterscheien läßt.
+
 
 ## Referenzen:
 * https://github.com/ktoso/sbt-jmh

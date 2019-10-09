@@ -46,5 +46,4 @@ class ExampleWithSimpleStateBenchmark {
       1
     else
       2
-
 }
