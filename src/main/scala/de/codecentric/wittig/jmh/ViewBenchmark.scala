@@ -18,19 +18,27 @@ class ViewState {
 @Threads(value = 1)
 class ViewBenchmark {
 
-  // list.find is faster
-  @Benchmark
-  def testFindList(state: ViewState): Option[LocalDate] =
-    state.list.find(_ == state.now.minusDays(state.count / 2))
-  @Benchmark
-  def testFindView(state: ViewState): Option[LocalDate] =
-    state.list.view.find(_ == state.now.minusDays(state.count / 2))
+//  // list.find is faster
+//  @Benchmark
+//  def testFindList(state: ViewState): Option[LocalDate] =
+//    state.list.find(_ == state.now.minusDays(state.count / 2))
+//  @Benchmark
+//  def testFindView(state: ViewState): Option[LocalDate] =
+//    state.list.view.find(_ == state.now.minusDays(state.count / 2))
+//
+//  @Benchmark
+//  def testMappedFindList(state: ViewState): Option[LocalDate] =
+//    state.list.map(_.plusDays(1)).find(_ == state.now.minusDays(state.count / 2))
+//  // map.view is faster
+//  @Benchmark
+//  def testMappedFindView(state: ViewState): Option[LocalDate] =
+//    state.list.view.map(_.plusDays(1)).find(_ == state.now.minusDays(state.count / 2))
 
   @Benchmark
-  def testMappedFindList(state: ViewState): Option[LocalDate] =
-    state.list.map(_.plusDays(1)).find(_ == state.now.minusDays(state.count / 2))
-  // map.view is faster
+  def testToMap(state: ViewState): Map[Int, LocalDate] =
+    state.list.map(ld => (ld.getDayOfYear, ld)).toMap
+  // faster
   @Benchmark
-  def testMappedFindView(state: ViewState): Option[LocalDate] =
-    state.list.view.map(_.plusDays(1)).find(_ == state.now.minusDays(state.count / 2))
+  def testToMapView(state: ViewState): Map[Int, LocalDate] =
+    state.list.view.map(ld => (ld.getDayOfYear, ld)).toMap
 }
