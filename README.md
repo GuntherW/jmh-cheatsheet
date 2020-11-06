@@ -2,7 +2,7 @@
 
 ```
 z.B.
-sbt:jmh-cheatsheet> `jmh:run -i 3 -wi 3 -f1 -t1 .*ExampleBenchmark.*`
+sbt:jmh-cheatsheet> `jmh:run -i 2 -wi 2 -f1 -t1 .*ExampleBenchmark.*`
 oder
 sbt:jmh-cheatsheet> `jmh:run  .*ExampleWithSimpleStateBenchmark.*` // alle Parameter via Annotationen gesetzt
 ```

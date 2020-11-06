@@ -10,7 +10,7 @@ lazy val root = (project in file("."))
     name := "jmh-cheatsheet",
     libraryDependencies ++= Seq(
       "org.typelevel" %% "cats-core" % "2.2.0",
-      "eu.timepit"    %% "refined"   % "0.9.15"
+      "eu.timepit"    %% "refined"   % "0.9.17"
     )
   )
   .enablePlugins(JmhPlugin)
