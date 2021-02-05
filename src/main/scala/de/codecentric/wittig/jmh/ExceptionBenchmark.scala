@@ -5,8 +5,7 @@ import org.openjdk.jmh.annotations.{Benchmark, BenchmarkMode, Fork, Measurement,
 import scala.collection.mutable
 import scala.util.matching.Regex
 
-/**
-  *  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
+/**  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
   */
 @BenchmarkMode(Array(Mode.AverageTime, Mode.Throughput))
 @Warmup(iterations = 1)

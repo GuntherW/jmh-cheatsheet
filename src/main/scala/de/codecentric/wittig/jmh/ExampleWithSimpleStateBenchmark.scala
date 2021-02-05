@@ -9,8 +9,7 @@ class MyState {
   val regex: Regex = ".*gunther".r
 }
 
-/**
-  *  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
+/**  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
   */
 @BenchmarkMode(Array(Mode.AverageTime, Mode.Throughput))
 @Warmup(iterations = 1)

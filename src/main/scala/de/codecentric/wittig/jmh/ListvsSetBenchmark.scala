@@ -11,8 +11,7 @@ class ListvsSetState {
   val set: Set[LocalDate]   = (1 to count).toList.map(i => now.plusDays(i)).toSet
 }
 
-/**
-  *  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
+/**  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
   */
 @BenchmarkMode(Array(Mode.AverageTime, Mode.Throughput))
 @Warmup(iterations = 1)

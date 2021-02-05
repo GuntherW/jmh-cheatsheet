@@ -35,7 +35,7 @@ class ViewBenchmark {
 //    state.list.view.map(_.plusDays(1)).find(_ == state.now.minusDays(state.count / 2))
 
   @Benchmark
-  def testToMap(state: ViewState): Map[Int, LocalDate] =
+  def testToMap(state: ViewState): Map[Int, LocalDate]     =
     state.list.map(ld => (ld.getDayOfYear, ld)).toMap
   // faster
   @Benchmark

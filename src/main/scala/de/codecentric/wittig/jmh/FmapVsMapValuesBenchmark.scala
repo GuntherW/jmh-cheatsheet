@@ -23,7 +23,7 @@ class FmapVsMapValuesState {
 class FmapVsMapValuesBenchmark {
 
   @Benchmark
-  def testFmap(state: FmapVsMapValuesState): Map[Int, LocalDate] =
+  def testFmap(state: FmapVsMapValuesState): Map[Int, LocalDate]      =
     state.map.fmap(_.plusDays(1))
   @Benchmark
   def testMapValues(state: FmapVsMapValuesState): Map[Int, LocalDate] =

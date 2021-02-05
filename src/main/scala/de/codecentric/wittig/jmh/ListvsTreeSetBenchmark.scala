@@ -24,10 +24,10 @@ class ListvsTreeSetState {
 class ListvsTreeSetBenchmark {
 
   @Benchmark
-  def testFilterList(state: ListvsTreeSetState): List[LocalDate] =
+  def testFilterList(state: ListvsTreeSetState): List[LocalDate]             =
     state.list.filter(ld => !ld.isBefore(state.dateFrom) && !ld.isAfter(state.dateTo))
   @Benchmark
-  def testFilterTreeSet(state: ListvsTreeSetState): List[LocalDate] =
+  def testFilterTreeSet(state: ListvsTreeSetState): List[LocalDate]          =
     state.treeSet.view.filter(ld => !ld.isBefore(state.dateFrom) && !ld.isAfter(state.dateTo)).toList
   @Benchmark
   def testFilterTreeSetWithRange(state: ListvsTreeSetState): List[LocalDate] =

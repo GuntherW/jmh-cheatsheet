@@ -41,8 +41,7 @@ class LinkedListState {
   var linkedList: util.LinkedList[Int] = _
 }
 
-/**
-  *  Run via `jmh:run -i 2 -wi 3 -f1 -t1 .*ExampleWithStateBenchmark*`
+/**  Run via `jmh:run -i 2 -wi 3 -f1 -t1 .*ExampleWithStateBenchmark*`
   */
 @State(Scope.Thread)
 @BenchmarkMode(Array(Mode.AverageTime))
