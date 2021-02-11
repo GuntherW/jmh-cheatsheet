@@ -22,7 +22,7 @@ class ListState {
 class View2Benchmark {
 
   @Benchmark
-  def test1(state: ListState): Seq[(Int, Int)] =
+  def withFilterAndGet(state: ListState): Seq[(Int, Int)] =
     state.list
       .filter(_.eins.isDefined)
       .groupBy(_.eins.get)
@@ -30,7 +30,7 @@ class View2Benchmark {
       .toList
 
   @Benchmark
-  def test1Parallel(state: ListState): Seq[(Int, Int)] =
+  def withFilterAndGetParallel(state: ListState): Seq[(Int, Int)] =
     state.list.par
       .filter(_.eins.isDefined)
       .groupBy(_.eins.get)
@@ -38,7 +38,7 @@ class View2Benchmark {
       .toList
 
   @Benchmark
-  def test2(state: ListState): Seq[(Int, Int)] =
+  def withViewFilterAndGet(state: ListState): Seq[(Int, Int)] =
     state.list.view
       .filter(_.eins.isDefined)
       .groupBy(_.eins.get)
@@ -49,10 +49,16 @@ class View2Benchmark {
       .toList
 
   @Benchmark
-  def test3(state: ListState): Seq[(Int, Int)] =
+  def withCollect(state: ListState): Seq[(Int, Int)] =
     state.list
       .groupBy(_.eins)
       .collect { case (Some(key), value) => key -> value.size }
       .toList
 
+  @Benchmark
+  def withCollectParallel(state: ListState): Seq[(Int, Int)] =
+    state.list.par
+      .groupBy(_.eins)
+      .collect { case (Some(key), value) => key -> value.size }
+      .toList
 }
