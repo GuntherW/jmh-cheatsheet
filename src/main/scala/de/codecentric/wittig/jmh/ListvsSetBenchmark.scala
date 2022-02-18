@@ -11,6 +11,17 @@ class ListvsSetState {
   val set: Set[LocalDate]   = (1 to count).toList.map(i => now.plusDays(i)).toSet
 }
 
+case class User(name: String, id: String)
+@State(Scope.Thread)
+class ListvsSetState2 {
+  val searchName             = "vorname.name600"
+  val searchId               = "id600"
+  val list: List[User]       = List.tabulate(800)(i => User(s"vorname.name$i", s"id$i"))
+  val set: Set[User]         = Set.tabulate(800)(i => User(s"vorname.name$i", s"id$i"))
+  val map: Map[String, User] =
+    (0 until 800).flatMap(i => Map(s"vorname.name$i" -> User(s"vorname.name$i", s"id$i"), s"id$i" -> User(s"vorname.name$i", s"id$i"))).toMap
+}
+
 /**  Run via `jmh:run   .*ExampleWithSimpleStateBenchmark*`
   */
 @BenchmarkMode(Array(Mode.AverageTime, Mode.Throughput))
@@ -19,22 +30,34 @@ class ListvsSetState {
 @Fork(value = 1)
 @Threads(value = 1)
 class ListvsSetBenchmark {
+//
+//  // Set is much faster with "contains"
+//  @Benchmark
+//  def testContainsList(state: ListvsSetState): Boolean =
+//    state.list.contains(state.now.minusDays(1))
+//
+//  @Benchmark
+//  def testContainsSet(state: ListvsSetState): Boolean =
+//    state.set.contains(state.now.minusDays(1))
+//
+//  // List is faster with "filter"
+//  @Benchmark
+//  def testFilterList(state: ListvsSetState): List[LocalDate] =
+//    state.list.filter(_.isBefore(state.now.plusDays(state.count / 2)))
+//
+//  @Benchmark
+//  def testFilterSet(state: ListvsSetState): Set[LocalDate] =
+//    state.set.filter(_.isBefore(state.now.plusDays(state.count / 2)))
 
-  // Set is much faster with "contains"
   @Benchmark
-  def testContainsList(state: ListvsSetState): Boolean =
-    state.list.contains(state.now.minusDays(1))
+  def testFindList(state: ListvsSetState2): Option[User] =
+    state.list.find(u => u.name == state.searchName || u.id == state.searchId)
 
   @Benchmark
-  def testContainsSet(state: ListvsSetState): Boolean =
-    state.set.contains(state.now.minusDays(1))
-
-  // List is faster with "filter"
-  @Benchmark
-  def testFilterList(state: ListvsSetState): List[LocalDate] =
-    state.list.filter(_.isBefore(state.now.plusDays(state.count / 2)))
+  def testFindSet(state: ListvsSetState2): Option[User] =
+    state.set.find(u => u.name == state.searchName || u.id == state.searchId)
 
   @Benchmark
-  def testFilterSet(state: ListvsSetState): Set[LocalDate] =
-    state.set.filter(_.isBefore(state.now.plusDays(state.count / 2)))
+  def testFindMap(state: ListvsSetState2): Option[User] =
+    state.map.get(state.searchName).orElse(state.map.get(state.searchId))
 }
